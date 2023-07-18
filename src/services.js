@@ -2,7 +2,7 @@ import * as fs from "node:fs";
 const CORRECT_NUMBERS = "./files/correct_numbers.txt";
 const INCORRECT_NUMBERS = "./files/incorrect_numbers.txt";
 const AMENDED_NUMBERS = "./files/amended_numbers.txt";
-const ORIGINAL_NUMBERS = "./files/south_African_Mobile_Numbers3.csv";
+const ORIGINAL_NUMBERS = "./files/south_African_Mobile_Numbers.csv";
 
 export const generateRandomNum = () => {
   return Math.floor(Math.random() * 10) + 1;
