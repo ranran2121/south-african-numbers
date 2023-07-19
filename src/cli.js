@@ -14,7 +14,7 @@ const rl = readline.createInterface({
 
 export const askService = (onResponse) => {
   rl.question(
-    "Enter the service ('c' to check a number, 's' to sort the numbers in the file, 'r' to read the generated files): ",
+    "Enter the service ('c' to check a number, 's' to sort the numbers in the file, 'r' to read the generated files, 'x' to exit): ",
     onResponse
   );
 };
@@ -22,8 +22,8 @@ export const askService = (onResponse) => {
 export const askNumber = () => {
   rl.question("Enter the number to check: ", (input) => {
     if (isNaN(input)) {
-      console.log("Not a number");
-      rl.close();
+      console.log("Not a number. Please try again");
+      askNumber();
     } else {
       checkInputValue(input);
       rl.close();
@@ -36,12 +36,11 @@ export const askFile = () => {
     "Enter the file you want to check ('1' for correct numbers, '2' for incorrect numbers, '3' for amended numbers): ",
     (input) => {
       if (isValidChoice(input)) {
-        console.log(input);
         readFile(input);
         rl.close();
       } else {
-        console.log("Invalid choice");
-        rl.close();
+        console.log("Invalid choice. Please try again");
+        askFile(input);
       }
     }
   );
@@ -56,12 +55,15 @@ export const sort = () => {
 export const followupQuestion = (answer) => {
   if (answer == "c") {
     askNumber();
-  }
-  if (answer == "s") {
+  } else if (answer == "s") {
     sort();
-  }
-  if (answer == "r") {
+  } else if (answer == "r") {
     askFile();
+  } else if (answer == "x") {
+    rl.close();
+  } else {
+    console.log("Invalid choice. Please try again");
+    askService(followupQuestion);
   }
 };
 

@@ -76,11 +76,14 @@ export const readFile = (input) => {
 };
 
 export const isValidNumber = (value) => {
-  return value.length === 11 && value.startsWith("27");
+  let regex = /^27\d{9}$/i;
+  return regex.test(value);
 };
 
 export const isInvalidNumber = (value) => {
-  return !value.startsWith("7") && !value.startsWith("27");
+  let regex1 = /^27\d{0,8}$/;
+  let regex2 = /^7\d{0,9}$/i;
+  return !regex1.test(value) && !regex2.test(value);
 };
 
 export const amendValue = (value) => {
@@ -142,7 +145,3 @@ export const createFiles = () => {
     console.log("Operation failed");
   }
 };
-
-//checkValue("77365279");
-//console.log(t);
-//createFiles();
