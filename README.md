@@ -14,7 +14,8 @@ This app is about checking is a number (typed by the user of contained in a file
 exercise).
 
 When you run the app, a prompt will ask which service to invoke. By typing:
-. 'c' is to allow the user to check a number of if choice. The console will tell the user if his input is correct, incorrect or if was amended and with which digits
-. 's' is to allow the user to sort the numbers contained in a file stored in the files directory.The app sort those numbers in 3 files (one for correct, one for incorrect and one for the one that could be amended together with the digits used to correct the format)> the files are stored in the files directory and can be opened with a normal text editor.
-. 'r' is to allow the user to chose which of the files created by the sorting algorithm to read in the console
-.'x' it to exit the process
+
+- 'c' is to allow the user to check a number of if choice. The console will tell the user if his input is correct, incorrect or if was amended and with which digits
+- 's' is to allow the user to sort the numbers contained in a file stored in the files directory.The app sort those numbers in 3 files (one for correct, one for incorrect and one for the one that could be amended together with the digits used to correct the format)> the files are stored in the files directory and can be opened with a normal text editor.
+- 'r' is to allow the user to chose which of the files created by the sorting algorithm to read in the console
+- 'x' it to exit the process
