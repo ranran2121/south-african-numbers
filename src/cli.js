@@ -22,7 +22,7 @@ const rl = readline.createInterface({
  */
 export const askService = (onResponse) => {
   rl.question(
-    "Enter the service ('c' to check a number, 's' to sort the numbers in the file, 'r' to read the generated files, 'x' to exit): ",
+    "Enter the service ('c' to check a number, 's' to sort the numbers in the file, 'r' to sort and read the generated files, 'x' to exit): ",
     onResponse
   );
 };
@@ -69,6 +69,7 @@ export const askFile = () => {
     "Enter the file you want to read ('1' for correct numbers, '2' for incorrect numbers, '3' for amended numbers): ",
     (input) => {
       if (isValidChoice(input)) {
+        sort();
         readFile(input);
         rl.close();
       } else {

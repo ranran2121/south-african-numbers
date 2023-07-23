@@ -1,27 +1,14 @@
 {
-  "name": "south african numbers",
+  "name": "south_african_numbers",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
-  "scripts": {
-    "test": "node --experimental-vm-modules node_modules/jest/bin/jest.js",
-    "test:monitoring": "jest services.test.js"
-  },
+  "scripts": {},
   "author": "",
   "license": "ISC",
   "dependencies": {},
-  "devDependencies": {
-    "jest": "^29.4.3",
-    "jest-environment-jsdom": "^29.5.0",
-    "jest-environment-jsdom-sixteen": "^2.0.0",
-    "jest-environment-node": "^29.5.0"
-  },
   "engines": {
     "node": ">=18"
-  },
-  "jest": {
-    "transform": {},
-    "testEnvironment": "jest-environment-jsdom"
   }
 }

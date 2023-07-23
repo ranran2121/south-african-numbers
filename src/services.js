@@ -66,9 +66,13 @@ export const printData = (path) => {
  * Delete all the files created after sorting the input data
  */
 export const deleteFiles = () => {
-  fs.unlinkSync(CORRECT_NUMBERS);
-  fs.unlinkSync(INCORRECT_NUMBERS);
-  fs.unlinkSync(AMENDED_NUMBERS);
+  try {
+    fs.unlinkSync(CORRECT_NUMBERS);
+    fs.unlinkSync(INCORRECT_NUMBERS);
+    fs.unlinkSync(AMENDED_NUMBERS);
+  } catch (e) {
+    console.error("old files not found");
+  }
 };
 
 /**
@@ -101,7 +105,7 @@ export const readFile = (input) => {
       printData(AMENDED_NUMBERS);
     }
   } catch (e) {
-    console.log("operation failed");
+    console.log("Operation failed:  ");
   }
 };
 

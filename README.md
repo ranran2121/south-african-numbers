@@ -2,15 +2,19 @@
 
 This step is required to use the right node version
 
-1. Install yarn, if needed (run `npm install -g yarn`)
-2. Create the _.env.local_ file and populate it accordingly to the current status of the project
-3. create the _.nvmrc_ file in the root folder and populate it with the node versione (e.g. 18.0)
-4. `nvm install` to install the proper npm verison according to the _.nvmrc_ file
-5. `nvm use`
-6. To intall the dependencies, run `yarn`
+1. `nvm install` to install the proper npm verison according to the _.nvmrc_ file
+2. `nvm use`
+3. To install the dependencies, run `yarn`
+4. Cd in the src directory
 
-To run the APIs, run the following command and follow the prompts
+To run the app, run the following command and follow the prompts
 `node index.js`
 
-To run test, run the following command
-`yarn test`
+This app is about checking is a number (typed by the user of contained in a file) is correctly format to be a valid South African number(27831234567 is the correct format for this
+exercise).
+
+When you run the app, a prompt will ask which service to invoke. By typing:
+. 'c' is to allow the user to check a number of if choice. The console will tell the user if his input is correct, incorrect or if was amended and with which digits
+. 's' is to allow the user to sort the numbers contained in a file stored in the files directory.The app sort those numbers in 3 files (one for correct, one for incorrect and one for the one that could be amended together with the digits used to correct the format)> the files are stored in the files directory and can be opened with a normal text editor.
+. 'r' is to allow the user to chose which of the files created by the sorting algorithm to read in the console
+.'x' it to exit the process
